@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -23,5 +21,6 @@ public class PlayerMovement : MonoBehaviour
             currentSpeed = walkSpeed;
         }
         gameObject.transform.Translate(0f, 0f, Input.GetAxis("Vertical") * currentSpeed * Time.deltaTime);
+        gameObject.transform.Translate(Input.GetAxis("Horizontal") * walkSpeed * Time.deltaTime, 0f, 0f);
     }
 }

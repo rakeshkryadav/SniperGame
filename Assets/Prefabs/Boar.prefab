@@ -537,7 +537,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animalName: Boar
-  walkSpeed: 2
+  walkSpeed: 3
   rotateSpeed: 50
   centerPos: {fileID: 2089683924658026651}
   range: 3

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ShootingScript : MonoBehaviour
@@ -13,19 +11,26 @@ public class ShootingScript : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private float delayTime = 10f;
     public RaycastHit hit;
+    public GameManagerScript gameManger;
     bool fireState = true;
     // Start is called before the first frame update
+
+    void Awake(){
+        fireEffect.Stop();
+    }
     void Start()
     {
-        fireEffect.Stop();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        Aiming();
-        Scoping();
-        Firing();
+        if(!gameManger.gamePause){
+            Aiming();
+            Scoping();
+            Firing();
+        }
     }
 
     void Aiming(){

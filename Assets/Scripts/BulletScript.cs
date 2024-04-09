@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BulletScript : MonoBehaviour
@@ -34,7 +32,7 @@ public class BulletScript : MonoBehaviour
         if(speed <= bulletSpeed){
             speed += 10;
         }
-        Invoke("DestroyBullet", 0.1f);
+        Invoke("DestroyBullet", 0.2f);
     }
 
     void DestroyBullet(){
