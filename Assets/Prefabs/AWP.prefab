@@ -56,6 +56,7 @@ MonoBehaviour:
   bulletRange: 100
   player: {fileID: 0}
   delayTime: 2
+  gameManger: {fileID: 0}
 --- !u!1 &5668959004529681687
 GameObject:
   m_ObjectHideFlags: 0

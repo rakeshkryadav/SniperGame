@@ -4,11 +4,12 @@ public class BulletScript : MonoBehaviour
 {
     [SerializeField] private int bulletSpeed = 500;
     [SerializeField] private float range = 0.1f;
+    [SerializeField] private LineRenderer trajectory;
     private int speed = 0;
     // Start is called before the first frame update
     void Start()
     {
-        
+        trajectory.positionCount = 2;
     }
 
     // Update is called once per frame
@@ -28,6 +29,10 @@ public class BulletScript : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+
+        trajectory.SetPosition(0, gameObject.transform.position);
+        trajectory.SetPosition(1, gameObject.transform.forward * 100f);
+
         gameObject.transform.Translate(Vector3.forward * speed * Time.deltaTime);
         if(speed <= bulletSpeed){
             speed += 10;
